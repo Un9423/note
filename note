@@ -1,420 +1,508 @@
-<assert.h>
-  1.
-  2.
-  3.
-  4.
-  5.
-  
-<ctype.h>
-  1.isdigit
-    #include<stdio.h>
-    #include<ctype.h>
-    int main() {
-      char a;
-      scanf("%c",&a);
-      if(isdigit(a)){
-        printf("%c是數字",a);
+  <assert.h>
+    1.assert
+      #include <stdio.h>
+      #include <assert.h>
+      int main (){
+        int i;
+        scanf("%d",&i);
+        assert(i < 100);
+        printf("%d<100",i);
       }
-      else{
-        printf("%c不是數字",a);
-      }
-    }
-    //偵測a是不是數字
+      //偵測i是否小於100
 
-  2.isalnum
-    #include<stdio.h>
-    #include<ctype.h>
-    int main() {
-      char a;
-      scanf("%c",&a);
-      if(isalnum(a)){
-        printf("%c是數字或字母",a);
-      }
-      else{
-        printf("%c不是數字或字母",a);
-      }
-    }
-    //偵測a是不是數字或字母
-
-  3.isalpha
-    #include<stdio.h>
-    #include<ctype.h>
-    int main() {
-      char a;
-      scanf("%c",&a);
-      if(isalpha(a)){
-        printf("%c是字母",a);
-      }
-      else{
-        printf("%c不是字母",a);
-      }
-    }
-    //偵測a是不是字母
-
-  4.isgraph
-    #include<stdio.h>
-    #include<ctype.h>
-    int main() {
-      char a;
-      scanf("%c",&a);
-      if(isgraph(a)){
-        printf("%c可印出",a);
-      }
-      else{
-        printf("%c不可印出",a);
-      }
-    }
-    //偵測a可不可印出(非空格)
-    
-  5.islower
-    #include<stdio.h>
-    #include<ctype.h>
-    int main() {
-      char a;
-      scanf("%c",&a);
-      if(islower(a)){
-        printf("%c是小寫字母",a);
-      }
-      else{
-        printf("%c不是小寫字母",a);
-      }
-    }
-    //偵測a是不是小寫字母
-
-  6.ispunct
-    #include<stdio.h>
-    #include<ctype.h>
-    int main() {
-      char a;
-      scanf("%c",&a);
-      if(ispunct(a)){
-        printf("%c是標點符號",a);
-      }
-      else{
-        printf("%c不是標點符號",a);
-      }
-    }
-    //偵測a是不是標點符號
-
-  7.isspace
-    #include<stdio.h>
-    #include<ctype.h>
-    int main() {
-      char a;
-      scanf("%c",&a);
-      if(isspace(a)){
-        printf("%c是空白",a);
-      }
-      else{
-        printf("%c不是空白",a);
-      }
-    }
-    //偵測a是不是空白
-
-  8.isupper
-    #include<stdio.h>
-    #include<ctype.h>
-    int main() {
-      char a;
-      scanf("%c",&a);
-      if(isupper(a)){
-        printf("%c是大寫字母",a);
-      }
-      else{
-        printf("%c不是大寫字母",a);
-      }
-    }
-    //偵測a是不是大寫字母
-
-  9.tolower
-    #include<stdio.h>
-    #include<ctype.h>
-    int main() {
-      char a;
-      scanf("%c",&a);
-      printf("%c",tolower(a));
-    }
-    //將a改成小寫字母
-
-  10.toupper
-    #include<stdio.h>
-    #include<ctype.h>
-    int main() {
-      char a;
-      scanf("%c",&a);
-      printf("%c",toupper(a));
-    }
-    //將a改成大寫字母
-  
-<math.h>
-  1.cos
-    #include<stdio.h>
-    #include<math.h>
-    #define PI 3.14159265
-    int main() {
-      double a,rad;
-      rad=180/PI;
-      scanf("%lf",&a);
-      printf("cos%.lf度 = %lf",a,cos(a*rad));
-    }
-    //輸出某個角度的cos值
-
-  2.sin
-    #include<stdio.h>
-    #include<math.h>
-    #define PI 3.14159265
-    int main() {
-      double a,rad;
-      rad=PI/180;
-      scanf("%lf",&a);
-      printf("sin%.lf度 = %lf",a,sin(a*rad));
-    }
-    //輸出某個角度的sin值
-
-  3.pow
-    #include<stdio.h>
-    #include<math.h>
-    int main() {
-      int a,b;
-      scanf("%d %d",&a,&b);
-      printf("%d的%d次方 = %.2f",a,b,pow(a,b));
-    }
-    //輸出a的b次方
-  
-  4.sqrt
-    #include<stdio.h>
-    #include<math.h>
-    int main() {
-      int a;
-      scanf("%d",&a);
-      printf("根號%d = %.2f",a,sqrt(a));
-    }
-    //輸出根號a
-   
-  5.ceil
-    #include<stdio.h>
-    #include<math.h>
-    int main() {
-      float a;
-      scanf("%f",&a);
-      printf("大於或等於%f的值是%.2f",a,ceil(a));
-    }
-    //輸出大於或等於a的值
-  
-<stdio.h>
-  1.
-  2.
-  3.
-  4.
-  5.
-  
-<stdlib.h>
-  1.abs
-    #include <stdio.h>
-    #include <stdlib.h>
-    int main() {
-      int a;
-      scanf("%d",&a);
-      printf("%d",abs(a));
-    }
-    //輸出a的絕對值
-
-  2.qsort
-    #include <stdio.h>
-    #include <stdlib.h>
-    int compare (int * a, int * b)
-    {
-       return ( *a - *b );
-    }
-    int main() {
-      int a[5];
-      for(int n = 0 ; n < 5; n++) {
-        scanf("%d",&a[n]);
-      }
-      qsort(a, 5, sizeof(int), compare);
-
-      for(int n = 0 ; n < 5; n++) {
-        printf("%d",a[n]);
-      }
-    }
-    //輸出陣列a由小排到大
-
-  3.rand
-    #include <stdio.h>
-    #include <stdlib.h>
-    #include <time.h>
-    int main(){
-      srand(time(NULL));
-      int min,max;
-      scanf("%d %d",&min,&max);
-      int x = rand() % (max - min + 1) + min;
-      printf("%d\n", x);
-    }
-    //輸出一個介於min和max之間的隨機整數
-
-  4.calloc
-    #include <stdio.h>
-    #include <stdlib.h>
-    int main(){
-      int n;
-      int *a;
-      scanf("%d",&n);
-      a = (int*)calloc(n, sizeof(int));
-      printf("輸入%d個數字:",n);
-      for(int i=0;i<n;i++){
-        scanf("%d",&a[i]);
-      }
-      for(int j=0;j<n;j++){
-        printf("%d ",a[j]);
-      }
-    }
-    //輸出一個陣列a[n]，calloc用來分配內存
-    
-  5.atoi
-    #include <stdio.h>
-    #include <stdlib.h>
-    int main(){
-       int a;
-       char b[10];
-       scanf("%s",b);
-       a = atoi(b);
-       printf("%d",a);
-    }
-    //將字串b轉換成整數a
-  
-<stdint.h>
-  1.
-  2.
-  3.
-  4.
-  5.
-  
-<string.h>
-  1.strcmp
-    #include <stdio.h>
-    #include <string.h>
-    int main() {
-      char a[10], b[10];
-      scanf("%s %s", a, b);
-      int result = strcmp(a, b);
-      if (result == 0) {
-        printf("%s 和 %s 一樣\n", a, b);
-      } 
-      else {
-        printf("%s 和 %s 不一樣\n", a, b);
-      }
-    }
-    //比較a和b是否一樣
-
-  2.strncmp
-    #include <stdio.h>
-    #include <string.h>
-    int main() {
-      char a[10], b[10];
-      int n;
-      scanf("%s %s", a, b);
-      scanf("%d",&n);
-      int result = strncmp(a, b, n);
-      if(result == 0){
-        printf("%s 和 %s 的前%d項一樣\n", a, b, n);
-      } 
-      else{
-        printf("%s 和 %s 的前%d項不一樣\n", a, b, n);
-      }
-    }
-    //比較a和b的前n項是否一樣
-
-  3.strlen
-    #include <stdio.h>
-    #include <string.h>
-    int main() {
-      char a[10];
-      int len;
-      scanf("%s", a);
-      len=strlen(a);
-      printf("%s的長度:%d",a,len);
-    }
-    //輸出a的長度
-
-  4.strcpy
-    #include <stdio.h>
-    #include <string.h>
-    int main() {
-      char a[10],b[10];
-      scanf("%s",b);
-      strcpy(a,b);
-      printf("%s",a);
-    }
-    //將b複製到a
-    
-  5.strncpy
-    #include <stdio.h>
-    #include <string.h>
-    int main() {
-      char a[10],b[10];
-      int n;
-      scanf("%s",b);
-      scanf("%d",&n);
-      strncpy(a,b,n);
-      printf("%s",a);
-    }
-    //將b的前n項複製到a
-  
-<time.h>
-  1.difftime
-    #include <stdio.h>
-    #include <string.h>
-    #include <time.h>
-    int main() {
-        char a[10];
-        time_t start_t, end_t;
-        double diff_t;
-        time(&start_t);
-        while (scanf("%s", a) == 1 && strcmp(a, "stop") != 0) {
+  <ctype.h>
+    1.isdigit
+      #include<stdio.h>
+      #include<ctype.h>
+      int main() {
+        char a;
+        scanf("%c",&a);
+        if(isdigit(a)){
+          printf("%c是數字",a);
         }
-        time(&end_t);
-        diff_t = difftime(end_t, start_t);
-        printf("經過時間 = %f\n", diff_t);
-    }
-    //計算輸入時間差
+        else{
+          printf("%c不是數字",a);
+        }
+      }
+      //偵測a是不是數字
 
-  2.asctime
-    #include <stdio.h>
-    #include <string.h>
-    #include <time.h>
-    int main(){
-      struct tm t;
-      t.tm_sec    = 1;
-      t.tm_min    = 5;
-      t.tm_hour   = 10;
-      t.tm_mday   = 7;
-      t.tm_mon    = 0;
-      t.tm_year   = 124;
-      t.tm_wday   = 0;
-      puts(asctime(&t));
-    }
-    //輸出時間
+    2.isalnum
+      #include<stdio.h>
+      #include<ctype.h>
+      int main() {
+        char a;
+        scanf("%c",&a);
+        if(isalnum(a)){
+          printf("%c是數字或字母",a);
+        }
+        else{
+          printf("%c不是數字或字母",a);
+        }
+      }
+      //偵測a是不是數字或字母
 
-  3.ctime
-    #include <stdio.h>
-    #include <time.h>
-    int main (){
-       time_t curtime;
-       time(&curtime);
-       printf("現在時間 = %s", ctime(&curtime));
-    }
-    //輸出現在時間
+    3.isalpha
+      #include<stdio.h>
+      #include<ctype.h>
+      int main() {
+        char a;
+        scanf("%c",&a);
+        if(isalpha(a)){
+          printf("%c是字母",a);
+        }
+        else{
+          printf("%c不是字母",a);
+        }
+      }
+      //偵測a是不是字母
 
-  4.time
-    #include <stdio.h>
-    #include <time.h>
-    int main (){
-      time_t seconds;
-      seconds = time(NULL);
-      printf("自1970/1/1已經過了 %ld 小時", seconds/3600);
-    }
-    //計算自1970/1/1經過幾小時
-  5.
+    4.isgraph
+      #include<stdio.h>
+      #include<ctype.h>
+      int main() {
+        char a;
+        scanf("%c",&a);
+        if(isgraph(a)){
+          printf("%c可印出",a);
+        }
+        else{
+          printf("%c不可印出",a);
+        }
+      }
+      //偵測a可不可印出(非空格)
 
+    5.islower
+      #include<stdio.h>
+      #include<ctype.h>
+      int main() {
+        char a;
+        scanf("%c",&a);
+        if(islower(a)){
+          printf("%c是小寫字母",a);
+        }
+        else{
+          printf("%c不是小寫字母",a);
+        }
+      }
+      //偵測a是不是小寫字母
 
-參考:gitbook.net
+    6.ispunct
+      #include<stdio.h>
+      #include<ctype.h>
+      int main() {
+        char a;
+        scanf("%c",&a);
+        if(ispunct(a)){
+          printf("%c是標點符號",a);
+        }
+        else{
+          printf("%c不是標點符號",a);
+        }
+      }
+      //偵測a是不是標點符號
+
+    7.isspace
+      #include<stdio.h>
+      #include<ctype.h>
+      int main() {
+        char a;
+        scanf("%c",&a);
+        if(isspace(a)){
+          printf("%c是空白",a);
+        }
+        else{
+          printf("%c不是空白",a);
+        }
+      }
+      //偵測a是不是空白
+
+    8.isupper
+      #include<stdio.h>
+      #include<ctype.h>
+      int main() {
+        char a;
+        scanf("%c",&a);
+        if(isupper(a)){
+          printf("%c是大寫字母",a);
+        }
+        else{
+          printf("%c不是大寫字母",a);
+        }
+      }
+      //偵測a是不是大寫字母
+
+    9.tolower
+      #include<stdio.h>
+      #include<ctype.h>
+      int main() {
+        char a;
+        scanf("%c",&a);
+        printf("%c",tolower(a));
+      }
+      //將a改成小寫字母
+
+    10.toupper
+      #include<stdio.h>
+      #include<ctype.h>
+      int main() {
+        char a;
+        scanf("%c",&a);
+        printf("%c",toupper(a));
+      }
+      //將a改成大寫字母
+
+  <math.h>
+    1.cos
+      #include<stdio.h>
+      #include<math.h>
+      #define PI 3.14159265
+      int main() {
+        double a,rad;
+        rad=180/PI;
+        scanf("%lf",&a);
+        printf("cos%.lf度 = %lf",a,cos(a*rad));
+      }
+      //輸出某個角度的cos值
+
+    2.sin
+      #include<stdio.h>
+      #include<math.h>
+      #define PI 3.14159265
+      int main() {
+        double a,rad;
+        rad=PI/180;
+        scanf("%lf",&a);
+        printf("sin%.lf度 = %lf",a,sin(a*rad));
+      }
+      //輸出某個角度的sin值
+
+    3.pow
+      #include<stdio.h>
+      #include<math.h>
+      int main() {
+        int a,b;
+        scanf("%d %d",&a,&b);
+        printf("%d的%d次方 = %.2f",a,b,pow(a,b));
+      }
+      //輸出a的b次方
+
+    4.sqrt
+      #include<stdio.h>
+      #include<math.h>
+      int main() {
+        int a;
+        scanf("%d",&a);
+        printf("根號%d = %.2f",a,sqrt(a));
+      }
+      //輸出根號a
+
+    5.ceil
+      #include<stdio.h>
+      #include<math.h>
+      int main() {
+        float a;
+        scanf("%f",&a);
+        printf("大於或等於%f的值是%.2f",a,ceil(a));
+      }
+      //輸出大於或等於a的值
+
+    6.asin
+      #include<stdio.h>
+      #include<math.h>
+      #define PI 3.14159265
+      int main() {
+        double a,rad;
+        rad=180/PI;
+        scanf("%lf",&a);
+        printf("%lf=sin %.2f度",a,asin(a)*rad);
+      }
+      //輸出某個sin值的角度
+
+  <stdio.h>
+    1.fopen
+      #include <stdio.h>
+      #include <stdlib.h>
+      int main(){
+        FILE *f;
+        f = fopen ("file.txt", "w+");
+      }
+      //建立檔案
+
+    2.fprint
+      #include <stdio.h>
+      #include <stdlib.h>
+      int main(){
+        FILE *f;
+        f = fopen ("file.txt", "w+");
+        fprintf(f, "%s %s %s %s %s", "hello", ",", "how", "are", "you");
+        fclose(f);
+      }
+      //將hello , how are you寫入file.txt
+
+    3.fclose
+      #include <stdio.h>
+      #include <stdlib.h>
+      int main(){
+        FILE *f;
+        f = fopen ("file.txt", "w+");
+        fclose(f);
+      }
+      //關閉file.txt
+
+    4.fwrite
+      #include<stdio.h>
+      int main (){
+         FILE *f;
+         char word[10];
+         scanf("%s",word);
+         f = fopen( "file.txt" , "w" );
+         fwrite(word , 1 , sizeof(word) , f);
+         fclose(f);
+      }
+      //將輸入的字串寫入file.txt
+
+    5.rename
+      #include <stdio.h>
+      int main (){
+        FILE *f;
+        f = fopen ("file.txt", "w+");
+        char oldName[] = "file.txt";
+        char newName[] = "newfile.txt";
+        if (rename(oldName, newName) == 0) {
+          printf("重新命名成功\n");
+        } else {
+          printf("重新命名失敗\n");
+        }
+      }
+      //重新命名file.txt為newfile.txt
+
+  <stdlib.h>
+    1.abs
+      #include <stdio.h>
+      #include <stdlib.h>
+      int main() {
+        int a;
+        scanf("%d",&a);
+        printf("%d",abs(a));
+      }
+      //輸出a的絕對值
+
+    2.qsort
+      #include <stdio.h>
+      #include <stdlib.h>
+      int compare (int * a, int * b)
+      {
+         return ( *a - *b );
+      }
+      int main() {
+        int a[5];
+        for(int n = 0 ; n < 5; n++) {
+          scanf("%d",&a[n]);
+        }
+        qsort(a, 5, sizeof(int), compare);
+
+        for(int n = 0 ; n < 5; n++) {
+          printf("%d",a[n]);
+        }
+      }
+      //輸出陣列a由小排到大
+
+    3.rand
+      #include <stdio.h>
+      #include <stdlib.h>
+      #include <time.h>
+      int main(){
+        srand(time(NULL));
+        int min,max;
+        scanf("%d %d",&min,&max);
+        int x = rand() % (max - min + 1) + min;
+        printf("%d\n", x);
+      }
+      //輸出一個介於min和max之間的隨機整數
+
+    4.calloc
+      #include <stdio.h>
+      #include <stdlib.h>
+      int main(){
+        int n;
+        int *a;
+        scanf("%d",&n);
+        a = (int*)calloc(n, sizeof(int));
+        printf("輸入%d個數字:",n);
+        for(int i=0;i<n;i++){
+          scanf("%d",&a[i]);
+        }
+        for(int j=0;j<n;j++){
+          printf("%d ",a[j]);
+        }
+      }
+      //輸出一個陣列a[n]，calloc用來分配內存
+
+    5.atoi
+      #include <stdio.h>
+      #include <stdlib.h>
+      int main(){
+         int a;
+         char b[10];
+         scanf("%s",b);
+         a = atoi(b);
+         printf("%d",a);
+      }
+      //將字串b轉換成整數a
+
+  <stdint.h>
+    1.
+      #include <stdio.h>
+      #include <stdint.h>
+      int main() {
+          int8_t myInt8 = 127;
+          uint16_t myUInt16 = 65535;
+          int32_t myInt32 = -2147483647;
+          printf("myInt8: %d\n", myInt8);
+          printf("myUInt16: %u\n", myUInt16);
+          printf("myInt32: %d\n", myInt32);
+      }
+      //定義int8_t、uint16_t和int32_t這些整數類型並輸出
+
+  <string.h>
+    1.strcmp
+      #include <stdio.h>
+      #include <string.h>
+      int main() {
+        char a[10], b[10];
+        scanf("%s %s", a, b);
+        int result = strcmp(a, b);
+        if (result == 0) {
+          printf("%s 和 %s 一樣\n", a, b);
+        } 
+        else {
+          printf("%s 和 %s 不一樣\n", a, b);
+        }
+      }
+      //比較a和b是否一樣
+
+    2.strncmp
+      #include <stdio.h>
+      #include <string.h>
+      int main() {
+        char a[10], b[10];
+        int n;
+        scanf("%s %s", a, b);
+        scanf("%d",&n);
+        int result = strncmp(a, b, n);
+        if(result == 0){
+          printf("%s 和 %s 的前%d項一樣\n", a, b, n);
+        } 
+        else{
+          printf("%s 和 %s 的前%d項不一樣\n", a, b, n);
+        }
+      }
+      //比較a和b的前n項是否一樣
+
+    3.strlen
+      #include <stdio.h>
+      #include <string.h>
+      int main() {
+        char a[10];
+        int len;
+        scanf("%s", a);
+        len=strlen(a);
+        printf("%s的長度:%d",a,len);
+      }
+      //輸出a的長度
+
+    4.strcpy
+      #include <stdio.h>
+      #include <string.h>
+      int main() {
+        char a[10],b[10];
+        scanf("%s",b);
+        strcpy(a,b);
+        printf("%s",a);
+      }
+      //將b複製到a
+
+    5.strncpy
+      #include <stdio.h>
+      #include <string.h>
+      int main() {
+        char a[10],b[10];
+        int n;
+        scanf("%s",b);
+        scanf("%d",&n);
+        strncpy(a,b,n);
+        printf("%s",a);
+      }
+      //將b的前n項複製到a
+
+  <time.h>
+    1.difftime
+      #include <stdio.h>
+      #include <string.h>
+      #include <time.h>
+      int main() {
+          char a[10];
+          time_t start_t, end_t;
+          double diff_t;
+          time(&start_t);
+          while (scanf("%s", a) == 1 && strcmp(a, "stop") != 0) {
+          }
+          time(&end_t);
+          diff_t = difftime(end_t, start_t);
+          printf("經過時間 = %f\n", diff_t);
+      }
+      //計算輸入時間差
+
+    2.asctime
+      #include <stdio.h>
+      #include <string.h>
+      #include <time.h>
+      int main(){
+        struct tm t;
+        t.tm_sec    = 1;
+        t.tm_min    = 5;
+        t.tm_hour   = 10;
+        t.tm_mday   = 7;
+        t.tm_mon    = 0;
+        t.tm_year   = 124;
+        t.tm_wday   = 0;
+        puts(asctime(&t));
+      }
+      //輸出時間
+
+    3.ctime
+      #include <stdio.h>
+      #include <time.h>
+      int main (){
+         time_t curtime;
+         time(&curtime);
+         printf("現在時間 = %s", ctime(&curtime));
+      }
+      //輸出現在時間
+
+    4.time
+      #include <stdio.h>
+      #include <time.h>
+      int main (){
+        time_t seconds;
+        seconds = time(NULL);
+        printf("自1970/1/1已經過了 %ld 小時", seconds/3600);
+      }
+      //計算自1970/1/1經過幾小時
+
+    5.strftime
+      #include <stdio.h>
+      #include <time.h>
+      int main (){
+         time_t rawtime;
+         struct tm *info;
+         char buffer[80];
+         time( &rawtime );
+         info = localtime( &rawtime );
+         strftime(buffer,80,"%x - %I:%M%p", info);
+         printf("現在時間 : |%s|", buffer );
+         return(0);
+      }
+      //用指定格式輸出現在時間
+
+  參考:gitbook.net
