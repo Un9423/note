@@ -1,1 +1,240 @@
+<assert.h>
+  1.
+  2.
+  3.
+  4.
+  5.
+  
+<ctype.h>
+  1.isdigit
+    #include<stdio.h>
+    #include<ctype.h>
+    int main() {
+      char a;
+      scanf("%c",&a);
+      if(isdigit(a)){
+        printf("%c是數字",a);
+      }
+      else{
+        printf("%c不是數字",a);
+      }
+    }
+    //偵測a是不是數字
 
+  2.isalnum
+    #include<stdio.h>
+    #include<ctype.h>
+    int main() {
+      char a;
+      scanf("%c",&a);
+      if(isalnum(a)){
+        printf("%c是數字或字母",a);
+      }
+      else{
+        printf("%c不是數字或字母",a);
+      }
+    }
+    //偵測a是不是數字或字母
+
+  3.isalpha
+    #include<stdio.h>
+    #include<ctype.h>
+    int main() {
+      char a;
+      scanf("%c",&a);
+      if(isalpha(a)){
+        printf("%c是字母",a);
+      }
+      else{
+        printf("%c不是字母",a);
+      }
+    }
+    //偵測a是不是字母
+
+  4.isgraph
+    #include<stdio.h>
+    #include<ctype.h>
+    int main() {
+      char a;
+      scanf("%c",&a);
+      if(isgraph(a)){
+        printf("%c可印出",a);
+      }
+      else{
+        printf("%c不可印出",a);
+      }
+    }
+    //偵測a可不可印出(非空格)
+    
+  5.islower
+    #include<stdio.h>
+    #include<ctype.h>
+    int main() {
+      char a;
+      scanf("%c",&a);
+      if(islower(a)){
+        printf("%c是小寫字母",a);
+      }
+      else{
+        printf("%c不是小寫字母",a);
+      }
+    }
+    //偵測a是不是小寫字母
+
+  6.ispunct
+    #include<stdio.h>
+    #include<ctype.h>
+    int main() {
+      char a;
+      scanf("%c",&a);
+      if(ispunct(a)){
+        printf("%c是標點符號",a);
+      }
+      else{
+        printf("%c不是標點符號",a);
+      }
+    }
+    //偵測a是不是標點符號
+
+  7.isspace
+    #include<stdio.h>
+    #include<ctype.h>
+    int main() {
+      char a;
+      scanf("%c",&a);
+      if(isspace(a)){
+        printf("%c是空白",a);
+      }
+      else{
+        printf("%c不是空白",a);
+      }
+    }
+    //偵測a是不是空白
+
+  8.isupper
+    #include<stdio.h>
+    #include<ctype.h>
+    int main() {
+      char a;
+      scanf("%c",&a);
+      if(isupper(a)){
+        printf("%c是大寫字母",a);
+      }
+      else{
+        printf("%c不是大寫字母",a);
+      }
+    }
+    //偵測a是不是大寫字母
+
+  9.tolower
+    #include<stdio.h>
+    #include<ctype.h>
+    int main() {
+      char a;
+      scanf("%c",&a);
+      printf("%c",tolower(a));
+    }
+    //將a改成小寫字母
+
+  10.toupper
+    #include<stdio.h>
+    #include<ctype.h>
+    int main() {
+      char a;
+      scanf("%c",&a);
+      printf("%c",toupper(a));
+    }
+    //將a改成大寫字母
+  
+<math.h>
+  1.cos
+    #include<stdio.h>
+    #include<math.h>
+    #define PI 3.14159265
+    int main() {
+      double a,rad;
+      rad=180/PI;
+      scanf("%lf",&a);
+      printf("cos%.lf度 = %lf",a,cos(a*rad));
+    }
+    //輸出某個角度的cos值
+
+  2.sin
+    #include<stdio.h>
+    #include<math.h>
+    #define PI 3.14159265
+    int main() {
+      double a,rad;
+      rad=PI/180;
+      scanf("%lf",&a);
+      printf("sin%.lf度 = %lf",a,sin(a*rad));
+    }
+    //輸出某個角度的sin值
+
+  3.pow
+    #include<stdio.h>
+    #include<math.h>
+    int main() {
+      int a,b;
+      scanf("%d %d",&a,&b);
+      printf("%d的%d次方 = %.2f",a,b,pow(a,b));
+    }
+    //輸出a的b次方
+  
+  4.sqrt
+    #include<stdio.h>
+    #include<math.h>
+    int main() {
+      int a;
+      scanf("%d",&a);
+      printf("根號%d = %.2f",a,sqrt(a));
+    }
+    //輸出根號a
+   
+  5.ceil
+    #include<stdio.h>
+    #include<math.h>
+    int main() {
+      float a;
+      scanf("%f",&a);
+      printf("大於或等於%f的值是%.2f",a,ceil(a));
+    }
+    //輸出大於或等於a的值
+  
+<stdio.h>
+  1.
+  2.
+  3.
+  4.
+  5.
+  
+<stdlib.h>
+  1.
+  2.
+  3.
+  4.
+  5.
+  
+<stdint.h>
+  1.
+  2.
+  3.
+  4.
+  5.
+  
+<string.h>
+  1.
+  2.
+  3.
+  4.
+  5.
+  
+<time.h>
+  1.
+  2.
+  3.
+  4.
+  5.
+
+
+參考:gitbook.net
