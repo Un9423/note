@@ -209,11 +209,78 @@
   5.
   
 <stdlib.h>
-  1.
-  2.
-  3.
-  4.
-  5.
+  1.abs
+    #include <stdio.h>
+    #include <stdlib.h>
+    int main() {
+      int a;
+      scanf("%d",&a);
+      printf("%d",abs(a));
+    }
+    //輸出a的絕對值
+
+  2.qsort
+    #include <stdio.h>
+    #include <stdlib.h>
+    int compare (int * a, int * b)
+    {
+       return ( *a - *b );
+    }
+    int main() {
+      int a[5];
+      for(int n = 0 ; n < 5; n++) {
+        scanf("%d",&a[n]);
+      }
+      qsort(a, 5, sizeof(int), compare);
+
+      for(int n = 0 ; n < 5; n++) {
+        printf("%d",a[n]);
+      }
+    }
+    //輸出陣列a由小排到大
+
+  3.rand
+    #include <stdio.h>
+    #include <stdlib.h>
+    #include <time.h>
+    int main(){
+      srand(time(NULL));
+      int min,max;
+      scanf("%d %d",&min,&max);
+      int x = rand() % (max - min + 1) + min;
+      printf("%d\n", x);
+    }
+    //輸出一個介於min和max之間的隨機整數
+
+  4.calloc
+    #include <stdio.h>
+    #include <stdlib.h>
+    int main(){
+      int n;
+      int *a;
+      scanf("%d",&n);
+      a = (int*)calloc(n, sizeof(int));
+      printf("輸入%d個數字:",n);
+      for(int i=0;i<n;i++){
+        scanf("%d",&a[i]);
+      }
+      for(int j=0;j<n;j++){
+        printf("%d ",a[j]);
+      }
+    }
+    //輸出一個陣列a[n]，calloc用來分配內存
+    
+  5.atoi
+    #include <stdio.h>
+    #include <stdlib.h>
+    int main(){
+       int a;
+       char b[10];
+       scanf("%s",b);
+       a = atoi(b);
+       printf("%d",a);
+    }
+    //將字串b轉換成整數a
   
 <stdint.h>
   1.
@@ -223,17 +290,130 @@
   5.
   
 <string.h>
-  1.
-  2.
-  3.
-  4.
-  5.
+  1.strcmp
+    #include <stdio.h>
+    #include <string.h>
+    int main() {
+      char a[10], b[10];
+      scanf("%s %s", a, b);
+      int result = strcmp(a, b);
+      if (result == 0) {
+        printf("%s 和 %s 一樣\n", a, b);
+      } 
+      else {
+        printf("%s 和 %s 不一樣\n", a, b);
+      }
+    }
+    //比較a和b是否一樣
+
+  2.strncmp
+    #include <stdio.h>
+    #include <string.h>
+    int main() {
+      char a[10], b[10];
+      int n;
+      scanf("%s %s", a, b);
+      scanf("%d",&n);
+      int result = strncmp(a, b, n);
+      if(result == 0){
+        printf("%s 和 %s 的前%d項一樣\n", a, b, n);
+      } 
+      else{
+        printf("%s 和 %s 的前%d項不一樣\n", a, b, n);
+      }
+    }
+    //比較a和b的前n項是否一樣
+
+  3.strlen
+    #include <stdio.h>
+    #include <string.h>
+    int main() {
+      char a[10];
+      int len;
+      scanf("%s", a);
+      len=strlen(a);
+      printf("%s的長度:%d",a,len);
+    }
+    //輸出a的長度
+
+  4.strcpy
+    #include <stdio.h>
+    #include <string.h>
+    int main() {
+      char a[10],b[10];
+      scanf("%s",b);
+      strcpy(a,b);
+      printf("%s",a);
+    }
+    //將b複製到a
+    
+  5.strncpy
+    #include <stdio.h>
+    #include <string.h>
+    int main() {
+      char a[10],b[10];
+      int n;
+      scanf("%s",b);
+      scanf("%d",&n);
+      strncpy(a,b,n);
+      printf("%s",a);
+    }
+    //將b的前n項複製到a
   
 <time.h>
-  1.
-  2.
-  3.
-  4.
+  1.difftime
+    #include <stdio.h>
+    #include <string.h>
+    #include <time.h>
+    int main() {
+        char a[10];
+        time_t start_t, end_t;
+        double diff_t;
+        time(&start_t);
+        while (scanf("%s", a) == 1 && strcmp(a, "stop") != 0) {
+        }
+        time(&end_t);
+        diff_t = difftime(end_t, start_t);
+        printf("經過時間 = %f\n", diff_t);
+    }
+    //計算輸入時間差
+
+  2.asctime
+    #include <stdio.h>
+    #include <string.h>
+    #include <time.h>
+    int main(){
+      struct tm t;
+      t.tm_sec    = 1;
+      t.tm_min    = 5;
+      t.tm_hour   = 10;
+      t.tm_mday   = 7;
+      t.tm_mon    = 0;
+      t.tm_year   = 124;
+      t.tm_wday   = 0;
+      puts(asctime(&t));
+    }
+    //輸出時間
+
+  3.ctime
+    #include <stdio.h>
+    #include <time.h>
+    int main (){
+       time_t curtime;
+       time(&curtime);
+       printf("現在時間 = %s", ctime(&curtime));
+    }
+    //輸出現在時間
+
+  4.time
+    #include <stdio.h>
+    #include <time.h>
+    int main (){
+      time_t seconds;
+      seconds = time(NULL);
+      printf("自1970/1/1已經過了 %ld 小時", seconds/3600);
+    }
+    //計算自1970/1/1經過幾小時
   5.
 
 
